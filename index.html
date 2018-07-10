@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Block Explorer</title>
+    <meta name="author" content="Thomas Hu">
+
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+	<div class="header">
+    	<h1>Block Explorer</h1>
+  	</div>
+
+  	<h2> Latest Block :</h2>
+
+  	<div class="jumbotron">
+  	<ul>
+    		<li><h5>Coinbase Address: <strong id="coinbase"></strong></h5></li>
+    		<li><h5>Balance: <strong id="balance"></strong></h5></li>
+    		<li><h5>Block Number: <strong id="latestBlock"></strong></h5></li>
+    		<li><h5>Block Timestamp: <strong id="latestBlockTimestamp"></strong></h5></li>
+    		<li><h5>Block Hash: <strong id="latestBlockHash"></strong></h5></li>
+    	</ul>
+      	</div>
+
+
+        <h5>Search by BlockNumber: </h5>
+        <div>
+            <input type="number" id="nb1" name="blockNumber"
+            placeholder="Block Number " size="10">
+            <input type="button" value = "Input" onclick="loadBlockByNumber()">
+        </div>
+
+        <h5>Search by Block Hash </h5>
+        <div>
+            <input type="text" id="hash" name="blockHash"
+            placeholder="0x8d3bad76656086342172b615b8ae8a93bc17f60dc29a07a09e1baf181d549ddc" size="75">
+            <input type="button" value = "Input" onclick="loadBlockByHash()">
+        </div>
+        <p id="Block"></p>
+
+        <h5>Search Contract Address by Hash </h5>
+        <div>
+            <input type="text" id="contract" name="contract" size="75">
+            <input type="button" value = "Input" onclick="loadContractByHash()">
+        </div>
+        <p id="Transactioninfo"></p>
+
+<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+ <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
